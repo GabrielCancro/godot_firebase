@@ -19,8 +19,6 @@ func _ready():
 	firebase.initialize_app(firebase_config)
 	db = firebase.database()
 	ref = db.get_reference_lite("juego1/jugadores")
-#	var result = yield(ref.update({"carlitos":250}), "completed")
-#	print(result)
 	
 func _refresh():
 	ref.fetch()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://clock_service.gd" type="Script" id=2]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -14,17 +15,15 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -44.0
+margin_top = -72.0
+margin_bottom = -28.0
 text = "refresh"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="lb_data" type="Label" parent="."]
 margin_left = 23.0
-margin_top = 100.0
+margin_top = 47.0
 margin_right = 385.0
-margin_bottom = 252.0
+margin_bottom = 184.0
 text = "press refresh to load data.."
 autowrap = true
 
@@ -40,8 +39,8 @@ autowrap = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -95.0
-margin_bottom = -51.0
+margin_top = -123.0
+margin_bottom = -79.0
 
 [node name="btn_set" type="Button" parent="Panel"]
 anchor_top = 1.0
@@ -52,9 +51,6 @@ margin_top = -37.0
 margin_right = -9.0
 margin_bottom = -6.0
 text = "set"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="le_key" type="LineEdit" parent="Panel"]
 margin_left = 13.0
@@ -69,6 +65,13 @@ margin_top = 9.0
 margin_right = 297.0
 margin_bottom = 36.0
 text = "value"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="clock_service" type="Button" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -20.0
+text = "CLOCK TIME: 9999999999999999"
+script = ExtResource( 2 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="clock_service"]
